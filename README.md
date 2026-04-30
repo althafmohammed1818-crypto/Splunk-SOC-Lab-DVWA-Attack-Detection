@@ -2,6 +2,7 @@
 webapplication attack detection using splunk 
 
 # 🧩 Step‑by‑Step Methods
+
 1 Configure DVWA on Kali (Apache + PHP + MariaDB) 
 Update packages:
 ```spl
@@ -34,6 +35,8 @@ Restart Apache:
 ```spl
 sudo systemctl restart apache2
 ```
+
+
 2 Simulate Web Attacks
 *Navigate to: http://<kali-ip>/DVWA/vulnerabilities/xss_r/
 
@@ -64,3 +67,19 @@ Since Splunk Enterprise is running on Kali:
 - Index: dvwa_log
 
 2 Save and start indexing.
+
+4️⃣ Detection in Splunk
+XSS Detection SPL
+```spl
+index=dvwa_log ("<script>" OR "%3Cscript%3E" OR "onerror" OR "alert(" OR "prompt(")
+```
+SQL Injection Detection SPL
+```spl
+index=dvwa_log ("' OR '1'='1" OR "UNION SELECT" OR "SLEEP(" OR "updatexml(" OR "ASCII(")
+```
+- Run queries in Splunk Search.
+- Verify detection events (payload → log entry → Splunk match).
+
+
+6️⃣ Dashboard Visualization
+Create Splunk dashboard with panels for XSS and SQLi queries.
