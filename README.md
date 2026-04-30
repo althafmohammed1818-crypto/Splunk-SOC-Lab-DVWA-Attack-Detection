@@ -34,3 +34,20 @@ Restart Apache:
 ```spl
 sudo systemctl restart apache2
 ```
+2 Simulate Web Attacks
+*Navigate to: http://<kali-ip>/DVWA/vulnerabilities/xss_r/
+
+Payload:
+```spl
+html
+<script>alert('XSS')</script>
+```
+*Observe alert popup in browser.
+*Confirm entry in /var/log/apache2/access.log.
+
+SQL Injection
+*Navigate to: http://<kali-ip>/DVWA/vulnerabilities/sqli/
+Payload:
+```spl ' OR '1'='1 ```
+*Observe manipulated query results.
+*Confirm entry in /var/log/apache2/access.log.
