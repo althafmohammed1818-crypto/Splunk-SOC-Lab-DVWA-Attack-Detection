@@ -57,7 +57,8 @@ Payload:
 *Observe manipulated query results.
 *Confirm entry in /var/log/apache2/access.log.
 
-3️⃣ Configure Splunk to Monitor Local Logs
+
+3️ Configure Splunk to Monitor Local Logs
 Since Splunk Enterprise is running on Kali:
 
 1 Add data source via Splunk Web:
@@ -65,10 +66,10 @@ Since Splunk Enterprise is running on Kali:
 - Path: /var/log/apache2/access.log
 - Sourcetype: access_combined
 - Index: dvwa_log
-
 2 Save and start indexing.
 
-4️⃣ Detection in Splunk
+
+4️ Detection in Splunk
 XSS Detection SPL
 ```spl
 index=dvwa_log ("<script>" OR "%3Cscript%3E" OR "onerror" OR "alert(" OR "prompt(")
@@ -81,5 +82,5 @@ index=dvwa_log ("' OR '1'='1" OR "UNION SELECT" OR "SLEEP(" OR "updatexml(" OR "
 - Verify detection events (payload → log entry → Splunk match).
 
 
-6️⃣ Dashboard Visualization
+6️ Dashboard Visualization
 Create Splunk dashboard with panels for XSS and SQLi queries.
