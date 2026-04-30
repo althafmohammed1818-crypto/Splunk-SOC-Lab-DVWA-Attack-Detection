@@ -58,9 +58,9 @@ Payload:
 Since Splunk Enterprise is running on Kali:
 
 1 Add data source via Splunk Web:
-Settings → Add Data → Files & Directories
-Path: /var/log/apache2/access.log
-Sourcetype: access_combined
-Index: dvwa_log
+- Settings → Add Data → Files & Directories
+- Path: /var/log/apache2/access.log
+- Sourcetype: access_combined
+- Index: dvwa_log
 
 2 Save and start indexing.
