@@ -1,5 +1,29 @@
-# Splunk-SOC-Lab-DVWA-Attack-Detection
-webapplication attack detection using splunk 
+# DVWA Attack Simulation & Splunk Detection
+
+## 📌 Overview
+This repository demonstrates how to simulate **web application attacks** (Cross‑Site Scripting and SQL Injection) in a controlled lab using **Damn Vulnerable Web Application (DVWA)** on Kali Linux, and detect them using **Splunk Enterprise**.  
+
+It showcases a SOC workflow: **attack → log → detection → dashboard → evidence**.  
+The goal is to provide recruiter‑ready documentation of security monitoring skills.
+
+---
+
+## ⚙️ Environment Setup
+
+### 1. Virtual Machines
+- **Kali Linux**: Attacker machine + Splunk host
+- **DVWA**: Installed on Apache2/PHP/MySQL stack
+
+### 2. DVWA Setup
+- Configure database via `setup.php`
+- Enable vulnerabilities (XSS, SQL Injection, SQLi Blind)
+
+### 3. Logging
+- Apache logs stored at `/var/log/apache2/access.log`
+- Verified with:
+  ```bash
+  tail -f /var/log/apache2/access.log
+
 
 # 🧩 Step‑by‑Step Methods
 
