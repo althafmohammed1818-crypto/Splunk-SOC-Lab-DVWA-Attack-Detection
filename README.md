@@ -47,7 +47,9 @@ html
 
 SQL Injection
 *Navigate to: http://<kali-ip>/DVWA/vulnerabilities/sqli/
+```spl 
 Payload:
-```spl ' OR '1'='1 ```
+' OR '1'='1 ```
+```
 *Observe manipulated query results.
 *Confirm entry in /var/log/apache2/access.log.
