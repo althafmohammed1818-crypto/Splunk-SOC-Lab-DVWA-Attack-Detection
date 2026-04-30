@@ -53,3 +53,14 @@ Payload:
 ```
 *Observe manipulated query results.
 *Confirm entry in /var/log/apache2/access.log.
+
+3️⃣ Configure Splunk to Monitor Local Logs
+Since Splunk Enterprise is running on Kali:
+
+1 Add data source via Splunk Web:
+Settings → Add Data → Files & Directories
+Path: /var/log/apache2/access.log
+Sourcetype: access_combined
+Index: dvwa_log
+
+2 Save and start indexing.
