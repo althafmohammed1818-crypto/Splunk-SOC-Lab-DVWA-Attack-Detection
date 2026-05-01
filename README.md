@@ -108,3 +108,5 @@ index=dvwa_log ("' OR '1'='1" OR "UNION SELECT" OR "SLEEP(" OR "updatexml(" OR "
 
 6️ Dashboard Visualization
 Create Splunk dashboard with panels for XSS and SQLi queries.
+
+![image alt](https://github.com/althafmohammed1818-crypto/Splunk-SOC-Lab-DVWA-Attack-Detection/blob/c7fda31e44519e53d38be9c314f51616a32754a4/Screenshot%202026-04-25%20130853.png)
